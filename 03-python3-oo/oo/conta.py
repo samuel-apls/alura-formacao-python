@@ -19,9 +19,29 @@ class Conta:
     def transfere(self, valor, conta_destino):
         self.saca(valor)
         conta_destino.deposita(valor)
+    
+    @property
+    def numero(self):
+        return self.__numero
+
+    @property
+    def titular(self):
+        return self.__titular
+    
+    @property
+    def saldo(self):
+        return self.extrato()
+    
+    @property
+    def limite(self):
+        return self.__limite
+    
+    @limite.setter
+    def limite(self, valor):
+        self.__limite = valor
 
 """ conta = Conta(123, "Nico", 100, 1000.0)
 conta2 = Conta(456, "Marcos", 100, 1000.0)
 conta.transfere(100, conta2)
-conta.extrato()
-conta2.extrato() """
+conta.saldo
+conta2.saldo """
